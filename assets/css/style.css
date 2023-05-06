@@ -137,6 +137,22 @@ a:active {
     justify-content: center;
 }
 
+.scroll {
+    background: #e2e2e2;
+    border-radius: .3rem;
+
+    min-width: 2.5rem;
+    aspect-ratio: 1/1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll .key {
+    padding: .1rem;
+}
+
 .board:hover,
 .board:focus,
 .board:active {
