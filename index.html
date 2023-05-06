@@ -14,6 +14,17 @@
         padding: 0;
         background-color: black;
         box-sizing: border-box;
+
+        -moz-user-select: -moz-none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+
+        /*
+            Introduced in IE 10.
+            See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+        */
+        -ms-user-select: none;
+        user-select: none;
     }
     html,
     body {
@@ -29,7 +40,7 @@
     a:hover,
     a:focus,
     a:active {
-        color: black;
+        color: rgb(164, 164, 164);
     }
     a {
         background-color: rgba(0, 0, 0, 0.651);
@@ -42,6 +53,46 @@
         z-index: 2;
     }
 
+    #usage {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        color: white;
+        font-family: monospace;
+        font-size: 2rem;
+        padding: 2rem;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.651);
+    }
+
+    #usage ul {
+        background: none;
+        list-style: none;
+        font-size: 1rem;
+    }
+
+    #usage ul li {
+        background: none;
+        margin: 1rem .5rem;
+        padding: .5rem;
+    }
+
+    #usage ul li span {
+        background-color: white;
+        padding: .5rem;
+        margin: .5em .5rem ;
+        
+        color: black;
+
+        border: 1px solid gray;
+        border-radius: 10px;
+        
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+    }
     video {
         position: absolute;
         inset: 0;
@@ -56,6 +107,20 @@
     <video autoplay muted loop id="bg">
         <source src="assets/background.mp4" type="video/mp4">
     </video>
+
+    <div id="usage">
+        <ul>
+            <li> <span> W </span> moving upward </li>
+            <li> <span> A </span> moving left </li>
+            <li> <span> S </span> moving downward </li>
+            <li> <span> D </span> moving right </li>
+
+            <li> <span> Q </span> decrease iteration </li>
+            <li> <span> E </span> increase iteration </li>
+
+            <li> <span> mouse scroll </span> zoom in and out </li>
+        </ul>
+    </div>
     <a href="target/mandelbrot.exe"> download link </a>
 </body>
 </html>
