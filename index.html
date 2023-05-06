@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,146 +8,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Speedy Mandelbrot Renderer </title>
 
-    <style> 
-    *,
-    *::before,
-    *::after {
-        margin: 0;
-        padding: 0;
-        background-color: black;
-        box-sizing: border-box;
-
-        -moz-user-select: -moz-none;
-        -khtml-user-select: none;
-        -webkit-user-select: none;
-
-        /*
-            Introduced in IE 10.
-            See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
-        */
-        -ms-user-select: none;
-        user-select: none;
-    }
-    html,
-    body {
-        padding: 0;
-        margin: 0;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-
-        flex-direction: row;
-        gap: 10vw;
-
-        overflow: hidden;
-
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    }
-
-    
-        
-
-    a:hover,
-    a:focus,
-    a:active {
-        color: rgb(164, 164, 164);
-    }
-    a {
-        background-color: rgba(0, 0, 0, 0.651);
-        color: white;
-        font-family: monospace;
-        font-size: 2rem;
-        text-decoration: none;
-        border: 1px solid white;
-        padding: 1rem 2rem;
-        z-index: 2;
-    }
-
-    #usage {
-        top: 0;
-        left: 0;
-        z-index: 2;
-        color: white;
-        font-family: monospace;
-        font-size: 2rem;
-        padding: 2rem;
-        z-index: 1;
-        background-color: rgba(0, 0, 0, 0.651);
-    }
-
-    #usage ul {
-        background: none;
-        list-style: none;
-        font-size: 1rem;
-    }
-
-    #usage ul li {
-        background: none;
-        margin: 1rem .5rem;
-        padding: .5rem;
-    }
-
-    #usage ul li span {
-        background-color: white;
-        padding: .5rem;
-        margin: .5em .5rem ;
-        
-        color: black;
-
-        border: 1px solid gray;
-        border-radius: 10px;
-        
-        align-items: center;
-        justify-content: center;
-
-        text-align: center;
-    }
-
-    @media screen and (max-width: 768px) {
-        html,
-        body {
-            flex-direction: column;
-        }
-        #usage {
-            position : initial;
-        }
-    }
-    video {
-        position: absolute;
-        inset: 0;
-
-        height: 100vh;
-        z-index: 1;
-    }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <h1 style="display: none;" >
-        <!-- this is for the search algorith -->
-        THE FASTEST MANDELBROT RENDERER EVER MADE
-        hahhahaha 
-    </h1>
-    <video autoplay muted loop id="bg">
+    <h1>Speedy Mandelbrot Renderer</h1>
+    
+    <main>
+        <div class="container">
+            <div>
+                <span class="board">
+                    <div class="key">W</div>
+                </span>
+                <span class="act"> move up</span>
+            </div>
+            <div>
+                <span class="board">
+                    <div class="key">A</div>
+                </span>
+                <span class="act"> move left </span>
+            </div>
+            <div>
+                <span class="board">
+                    <div class="key">S</div>
+                </span>
+                <span class="act">move down</span></div>
+            <div>
+                <span class="board">
+                    <div class="key">D</div>
+                </span>
+                <span class="act">move right</span>
+            </div>
+            <div>
+                <span class="board">
+                    <div class="key">Q</div>
+                </span>
+                <span class="act">decrease iterations</span>
+            </div>
+            <div>
+                <span class="board">
+                    <div class="key">E</div>
+                </span>
+                <span class="act">increase iterations</span>
+            </div>
+
+            <div>
+                <span class="board">
+                    <div class="key"></div>
+                </span>
+                <span class="act">increase iterations</span>
+            </div>
+        
+        </div>
+    </main>
+    
+    <video autoplay muted>
         <source src="assets/background.mp4" type="video/mp4">
     </video>
-    
-    
-    <div id="usage">
-        <ul>
-            <li> <span> W </span> moving upward </li>
-            <li> <span> A </span> moving left </li>
-            <li> <span> S </span> moving downward </li>
-            <li> <span> D </span> moving right </li>
-            
-            <li> <span> Q </span> decrease iteration </li>
-            <li> <span> E </span> increase iteration </li>
-            
-            <li> <span> mouse scroll </span> zoom in and out </li>
-        </ul>
-    </div>
-    <a href="target/mandelbrot.exe"> download link </a>
+
+    <a href="target/mandelbrot.exe"> Download </a>
 </body>
 </html>

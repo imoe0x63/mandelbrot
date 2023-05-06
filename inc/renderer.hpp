@@ -27,8 +27,9 @@ namespace m {
     struct renderer : sf::RenderWindow {
         public:
             renderer( const sf::String& title, const sf::VideoMode& vm = {1024, 512}, const sf::Uint32& style = sf::Style::Default) : 
-                sf::RenderWindow(vm, title, style) {
-                
+                sf::RenderWindow(vm, title, style)
+            {
+               
                 sf::Texture tex;
 
                 tex.create(vm.width, vm.height);
@@ -117,7 +118,6 @@ namespace m {
                 }
             }
             virtual void render_frame(const sf::Time& dt) {
-
                 if(shader.isAvailable()){
                     draw(sprite, &shader);
                 } else {
