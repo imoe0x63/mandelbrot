@@ -35,7 +35,13 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
+
+        flex-direction: row;
+        gap: 10vw;
     }
+
+    
+        
 
     a:hover,
     a:focus,
@@ -54,7 +60,6 @@
     }
 
     #usage {
-        position: absolute;
         top: 0;
         left: 0;
         z-index: 2;
@@ -93,6 +98,16 @@
 
         text-align: center;
     }
+
+    @media screen and (max-width: 768px) {
+        html,
+        body {
+            flex-direction: column;
+        }
+        #usage {
+            position : initial;
+        }
+    }
     video {
         position: absolute;
         inset: 0;
@@ -107,17 +122,18 @@
     <video autoplay muted loop id="bg">
         <source src="assets/background.mp4" type="video/mp4">
     </video>
-
+    
+    
     <div id="usage">
         <ul>
             <li> <span> W </span> moving upward </li>
             <li> <span> A </span> moving left </li>
             <li> <span> S </span> moving downward </li>
             <li> <span> D </span> moving right </li>
-
+            
             <li> <span> Q </span> decrease iteration </li>
             <li> <span> E </span> increase iteration </li>
-
+            
             <li> <span> mouse scroll </span> zoom in and out </li>
         </ul>
     </div>
