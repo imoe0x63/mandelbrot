@@ -1,0 +1,41 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: cl.exe build active file",
+			"command": "cl.exe",
+			"args": [
+				"/Zi",
+				"/EHsc",
+				"/std:c++latest",
+				"/MT",
+				"/nologo",
+				"/Fo${workspaceFolder}\\target\\intermediate\\",
+				"/Fd${workspaceFolder}\\target\\intermediate\\",
+				"/Fe${workspaceFolder}\\target\\${workspaceFolderBasename}.exe",
+				"${workspaceFolder}\\src\\*.cpp",
+				// additional include directories
+				"/I", "${workspaceFolder}\\inc",
+				"/I", "${VCPKG_ROOT}\\installed\\x64-windows-static\\include",
+				// additional .lib directories
+				"/link",
+				"/LIBPATH:${VCPKG_ROOT}\\installed\\x64-windows-static\\lib",
+				// linking libraries
+				"user32.lib", "shell32.lib", "advapi32.lib", "freetype.lib", "OpenGL32.lib", "gdi32.lib",
+				"sfml-graphics-s.lib", "sfml-window-s.lib", "sfml-system-s.lib", "winmm.lib",
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: cl.exe"
+		}
+	]
+}
